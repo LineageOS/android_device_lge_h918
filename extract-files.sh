@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 # Copyright (C) 2016 The CyanogenMod Project
 # Copyright (C) 2017 The LineageOS Project
@@ -23,4 +23,6 @@ export DEVICE_COMMON=v20-common
 export PLATFORM_COMMON=msm8996-common
 export VENDOR=lge
 
-./../$PLATFORM_COMMON/extract-files.sh $@
+path="$0"
+[ "$path" != "${path%/*}" ] || path="`which $0`"
+exec "${path%/*}../$PLATFORM_COMMON/${path##*/}" "$@"
