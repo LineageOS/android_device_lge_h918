@@ -18,10 +18,12 @@
 
 set -e
 
-export DEVICE=h918
-export DEVICE_COMMON=v20-common
-export PLATFORM_COMMON=msm8996-common
-export VENDOR=lge
+DEVICE=h918
+DEVICE_COMMON=v20-common
+PLATFORM_COMMON=msm8996-common
+VENDOR=lge
+
+export DEVICE DEVICE_COMMON PLATFORM_COMMON VENDOR
 
 path="$0"
 [ "$path" != "${path%/*}" ] || path="`which $0`"
