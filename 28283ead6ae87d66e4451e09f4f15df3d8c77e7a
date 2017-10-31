@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0a21a544_0dc7f1f0",
+        "filename": "extract-files.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2017-10-31T21:20:44Z",
+      "side": 1,
+      "message": "Yes, I hope no one has \".\" in their $PATH, but that is legal and I\u0027d prefer not to automatically break in that situation.",
+      "revId": "28283ead6ae87d66e4451e09f4f15df3d8c77e7a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e79ad48b_0ac3a9fe",
+        "filename": "extract-files.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2017-10-31T21:20:44Z",
+      "side": 1,
+      "message": "And this is the proper way to do this bit.  Using \"exec\" avoids fork()ing another process, and also means our return will be what the next layer returns.  Getting your own name from $0 is also standard fare.  Then quoting $@ is standard (I\u0027m unsure how far back it goes, but has worked for a long time).",
+      "revId": "28283ead6ae87d66e4451e09f4f15df3d8c77e7a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a023e656_ccc028fa",
+        "filename": "setup-makefiles.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2017-10-31T21:20:44Z",
+      "side": 1,
+      "message": "Well if we call the next layer by using ${0##*/} then suddenly these two scripts are identical, thus a symbolic link is sufficient.",
+      "revId": "28283ead6ae87d66e4451e09f4f15df3d8c77e7a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
