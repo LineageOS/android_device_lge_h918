@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a9fab41_54b26ba4",
+        "filename": "extract-files.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2017-11-01T20:33:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0a21a544_0dc7f1f0",
+      "revId": "28283ead6ae87d66e4451e09f4f15df3d8c77e7a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e79ad48b_0ac3a9fe",
         "filename": "extract-files.sh",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2017-10-31T21:20:44Z",
       "side": 1,
       "message": "And this is the proper way to do this bit.  Using \"exec\" avoids fork()ing another process, and also means our return will be what the next layer returns.  Getting your own name from $0 is also standard fare.  Then quoting $@ is standard (I\u0027m unsure how far back it goes, but has worked for a long time).",
+      "revId": "28283ead6ae87d66e4451e09f4f15df3d8c77e7a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b91a47a9_70b06c3d",
+        "filename": "extract-files.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2017-11-01T20:33:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e79ad48b_0ac3a9fe",
       "revId": "28283ead6ae87d66e4451e09f4f15df3d8c77e7a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
