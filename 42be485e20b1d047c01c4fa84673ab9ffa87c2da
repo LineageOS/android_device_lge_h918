@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4665f593_481c4bfb",
+        "filename": "extract-files.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2017-11-01T20:33:05Z",
+      "side": 0,
+      "message": "Not even a single line of this script requires the Bourne Again SHell.  Everything conforms to the POSIX shell and only the export\u0026assign lines are unavailable in pure-Bourne shell (sigh, apparently a few people remain on SunOS^WSolaris 5.10^W2.10^W10).\n\nTracking down information on the performance difference was a bit interesting, but finally: https://unix.stackexchange.com/questions/148035/is-dash-or-some-other-shell-faster-than-bash\nThis is likely near the worst possible case, so using /bin/sh is likely near a factor of 4 here.  Closer towards the core of LineageOS I\u0027m unsure of the trade-off.  If bash arrays are fast, then bash may be worthwhile for the core.  If `eval` is reasonably fash, /bin/sh may win there too.",
+      "revId": "42be485e20b1d047c01c4fa84673ab9ffa87c2da",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a89b735b_5a3ebc8b",
+        "filename": "extract-files.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2017-11-01T20:33:05Z",
+      "side": 0,
+      "message": "First off, that \"./\" is just silly.\n\nSecond, since we share the filename using \"${0##*/}\" is equivalent to `basename` and often good form to use that if the name is the same.\n\nThird, why are we spawning a new shell process (fork()+exec()) and then propagating the return code if the called script produces an error (set -e)?  Using exec avoids the extra process.\n\nFourth, calling as \"../$PLATFORM_COMMON\" is Bad(tm).  What if someone types the command `lineage\\ dir/devices/lge/h918/extract-files.sh` into their shell?  That path would lead outside the build area and the script WILL fail.\n\nFifth, $@ needs to be quoted.  If our arguments include a space anywhere (\"-p image\\ dir\"), that will get turned into two arguments to the the next layer and the script will fail.",
+      "revId": "42be485e20b1d047c01c4fa84673ab9ffa87c2da",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
