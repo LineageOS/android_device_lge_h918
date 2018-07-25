@@ -27,5 +27,8 @@ TARGET_KERNEL_CONFIG := lineageos_h918_defconfig
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
+# Assertions
+TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
+
 # inherit from the proprietary version
 -include vendor/lge/h918/BoardConfigVendor.mk
