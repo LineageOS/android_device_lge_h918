@@ -22,7 +22,7 @@ DEVICE_PATH := device/lge/h918
 TARGET_OTA_ASSERT_DEVICE := h918,elsa
 
 # Kernel
-TARGET_KERNEL_CONFIG := lineageos_h918_defconfig
+TARGET_KERNEL_CONFIG := vendor/lge/h918.config
 
 # Assertions
 TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
